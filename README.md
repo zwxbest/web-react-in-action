@@ -1,2 +1,2 @@
-# web-react-in-action
-Webpack + React全栈工程架构项目实战精讲源码
+1. webpack配置
+2. 运行`yarn build`

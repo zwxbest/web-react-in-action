@@ -1,0 +1,27 @@
+{
+  "name": "web-react-in-action",
+  "version": "1.0.0",
+  "description": "Webpack + React全栈工程架构项目实战精讲源码",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config build/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zwxbest/web-react-in-action.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zwxbest/web-react-in-action/issues"
+  },
+  "homepage": "https://github.com/zwxbest/web-react-in-action#readme",
+  "dependencies": {
+    "react": "^16.8.4",
+    "webpack": "^4.29.6"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.2.3"
+  }
+}
