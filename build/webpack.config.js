@@ -1,4 +1,5 @@
-const path=require('path')
+const path=require('path');
+const HTMLPlugin = require('html-webpack-plugin');
 
 module.exports={
     entry: {
@@ -12,7 +13,16 @@ module.exports={
         rules: [{
             test: /.jsx$/,
             loader: 'babel-loader' //js编译器
-        }
+        }, {
+                test: /.js$/,
+                loader: 'babel-loader', //js编译器
+            exclude:[
+                path.join(__dirname,'../node_modules')
+            ]
+            }
         ]
-    }
+    },
+    plugins: [
+        new HTMLPlugin()
+    ]
 }
