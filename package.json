@@ -7,7 +7,8 @@
     "build:client": "webpack --config build/webpack.config.client.js",
     "build:server": "webpack --config build/webpack.config.server.js",
     "clear": "rimraf dist",
-    "build": "npm run clear && npm run build:client && npm run build:server"
+    "build": "npm run clear && npm run build:client && npm run build:server",
+    "start":"node server/server.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/zwxbest/web-react-in-action#readme",
   "dependencies": {
+    "express": "^4.16.4",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "rimraf": "^2.6.3",
