@@ -2,5 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from  './App.jsx'
 
+const renderMethod = module.hot? ReactDOM.hydrate:ReactDOM.render;
 
-ReactDOM.hydrate(<App/>, document.getElementById("root"));
+renderMethod(<App/>, document.getElementById("root"));

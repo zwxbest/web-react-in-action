@@ -12,7 +12,7 @@ app.use('/public',express.static(path.join(__dirname,'../dist')));
 //任何i请求都服务器端渲染
 app.get('*',function(req,res){
     const appString = ReactSSR.renderToString(serverEntry);
-    res.send(template.replace('<app></app>',appString));
+    res.send(template.replace('<!-- app -->',appString));
 });
 
 app.listen(3333,function () {
