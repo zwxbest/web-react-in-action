@@ -1,4 +1,3 @@
 ### 服务端渲染
 
-1. 使用node启动
-2.  publicPath: '/public'//对应app.use('/public',express.static(path.join(__dirname,'../dist')));
+1. ReactDOM.hydrate- react检测到浏览器渲染和服务器渲染不一致时,会用浏览器内容替换服务端内容
