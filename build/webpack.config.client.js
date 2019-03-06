@@ -8,6 +8,7 @@ module.exports={
     output:{
         filename: '[name].[hash].js',//文件名有改动刷新浏览器缓存
         path: path.join(__dirname,'../dist'),
+        publicPath: '/public' //对应app.use('/public',express.static(path.join(__dirname,'../dist')));
     },
     module: {
         rules: [{
@@ -23,6 +24,8 @@ module.exports={
         ]
     },
     plugins: [
-        new HTMLPlugin()
+        new HTMLPlugin({
+            template: path.join(__dirname,'../client/template.html')
+        })
     ]
 }

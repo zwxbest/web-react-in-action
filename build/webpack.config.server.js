@@ -9,7 +9,8 @@ module.exports={
     output:{
         filename: 'server-entry.js',
         path: path.join(__dirname,'../dist'),
-        libraryTarget: "commonjs2"
+        libraryTarget: "commonjs2",
+        publicPath: '/public'//对应app.use('/public',express.static(path.join(__dirname,'../dist')));
     },
     module: {
         rules: [{
