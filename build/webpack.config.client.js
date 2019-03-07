@@ -1,6 +1,7 @@
 const path=require('path');
 const HTMLPlugin = require('html-webpack-plugin');
 const isDev =  process.env.NODE_ENV === 'development';
+const webpack = require('webpack');
 
 const config={
     entry: {
@@ -9,7 +10,7 @@ const config={
     output:{
         filename: '[name].[hash].js',//文件名有改动刷新浏览器缓存
         path: path.join(__dirname,'../dist'),
-        publicPath: '/public' //对应app.use('/public',express.static(path.join(__dirname,'../dist')));
+        publicPath: '/public/' //对应app.use('/public',express.static(path.join(__dirname,'../dist')));
     },
     module: {
         rules: [{
@@ -32,20 +33,29 @@ const config={
 };
 
 if(isDev){
+    config.entry={
+        app:[
+           'react-hot-loader/patch',
+            path.join(__dirname,'../client/app.js')
+        ]
+    };
     config.devServer={
         host: '0.0.0.0',
         port: '8888',
         contentBase: path.join(__dirname,'../dist'),
-        // hot:true,
+        hot:true,
         //处理错误
         overlay:{
             errors: true
         },
-        publicPath:'/public',//访问静态路径的前缀
+        publicPath:'/public/',//访问静态路径的前缀
         historyApiFallback:{//报错返回这个html
           index:'/public/index.html'
         }
-    }
+    };
+
+
+    config.plugins.push(new webpack.HotModuleReplacementPlugin());
 }
 
 module.exports = config;
